@@ -19,13 +19,6 @@
 // });
 
 // EXPRESS.JS
-require("dotenv").config();
-
-process.env.USER_ID;
-process.env.USER_KEY;
-process.env.NODE_ENV;
-
-const axios = require("axios");
 
 // const express = require("express");
 // const app = express();
@@ -38,3 +31,20 @@ const axios = require("axios");
 // app.listen(port, () => {
 //     console.log(`Example app listening to on port ${port}`);
 // });
+
+// AXIOS
+require("dotenv").config();
+
+process.env.USER_ID;
+process.env.USER_KEY;
+process.env.NODE_ENV;
+
+const axios = require("axios");
+
+axios
+    .get("http://example.com/todos")
+    .then((res) => {
+        console.log(`statusCode: ${res.status}`);
+        console.log(res);
+    })
+    .catch((error) => console.error(error));
