@@ -39,13 +39,45 @@ process.env.USER_ID;
 process.env.USER_KEY;
 process.env.NODE_ENV;
 
+const { copyFileSync } = require("fs");
 const https = require("https");
 
+// GET method
+// const options = {
+//     hostname: "127.0.0.1",
+//     port: 443,
+//     path: "/todos",
+//     method: "GET",
+// };
+
+// const req = https.request(options, (res) => {
+//     console.log(`statusCode: ${res.statusCode}`);
+
+//     res.on("data", (d) => {
+//         process.stdout.write(d);
+//     });
+// });
+
+// req.on("error", (error) => {
+//     console.error(error);
+// });
+
+// req.end();
+
+// POST method
+const data = JSON.stringify({
+    todo: "Buy the milk",
+});
+
 const options = {
-    hostname: "example.com",
+    hostname: "127.0.0.1",
     port: 443,
     path: "/todos",
-    method: "GET",
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Content-Length": data.length,
+    },
 };
 
 const req = https.request(options, (res) => {
