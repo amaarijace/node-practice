@@ -33,36 +33,36 @@
 // });
 
 // AXIOS
-require("dotenv").config();
+// require("dotenv").config();
 
-process.env.USER_ID;
-process.env.USER_KEY;
-process.env.NODE_ENV;
+// process.env.USER_ID;
+// process.env.USER_KEY;
+// process.env.NODE_ENV;
 
-const { copyFileSync } = require("fs");
-const https = require("https");
-const hostname = "127.0.0.1";
-const port = 3000;
+// const { copyFileSync } = require("fs");
+// const https = require("https");
+// const hostname = "127.0.0.1";
+// const port = 3000;
 
-const server = https.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    res.end("Hello world\n");
-});
+// const server = https.createServer((req, res) => {
+//     res.statusCode = 200;
+//     res.setHeader("Content-Type", "text/plain");
+//     res.end("Hello world\n");
+// });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+// server.listen(port, hostname, () => {
+//     console.log(`Server running at http://${hostname}:${port}/`);
+// });
 
-const axios = require("axios");
+// const axios = require("axios");
 
-axios
-    .get("http://example.com/todos")
-    .then((res) => {
-        console.log(`statusCode: ${res.status}`);
-        console.log(res);
-    })
-    .catch((error) => console.error(error));
+// axios
+//     .get("http://example.com/todos")
+//     .then((res) => {
+//         console.log(`statusCode: ${res.status}`);
+//         console.log(res);
+//     })
+//     .catch((error) => console.error(error));
 
 // // GET method
 // const options = {
