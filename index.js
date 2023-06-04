@@ -25,14 +25,16 @@ process.env.USER_ID;
 process.env.USER_KEY;
 process.env.NODE_ENV;
 
-const express = require("express");
-const app = express();
-const port = 3000;
+const axios = require("axios");
 
-app.get("/", (req, res) => {
-    res.send("Hello world");
-});
+// const express = require("express");
+// const app = express();
+// const port = 3000;
 
-app.listen(port, () => {
-    console.log(`Example app listening to on port ${port}`);
-});
+// app.get("/", (req, res) => {
+//     res.send("Hello world");
+// });
+
+// app.listen(port, () => {
+//     console.log(`Example app listening to on port ${port}`);
+// });
