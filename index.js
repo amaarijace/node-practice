@@ -39,12 +39,12 @@ process.env.USER_ID;
 process.env.USER_KEY;
 process.env.NODE_ENV;
 
-const axios = require("axios");
+// const axios = require("axios");
 
-axios
-    .get("http://example.com/todos")
-    .then((res) => {
-        console.log(`statusCode: ${res.status}`);
-        console.log(res);
-    })
-    .catch((error) => console.error(error));
+// axios
+//     .get("http://example.com/todos")
+//     .then((res) => {
+//         console.log(`statusCode: ${res.status}`);
+//         console.log(res);
+//     })
+//     .catch((error) => console.error(error));
