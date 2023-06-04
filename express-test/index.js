@@ -14,10 +14,6 @@ app.get("/about", (req, res) => {
     res.send("About");
 });
 
-app.get("/404", (req, res) => {
-    res.send("404");
-});
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
