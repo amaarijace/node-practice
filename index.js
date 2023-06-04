@@ -41,11 +41,31 @@ process.env.NODE_ENV;
 
 const { copyFileSync } = require("fs");
 const https = require("https");
+const hostname = "127.0.0.1";
+const port = 3000;
 
-// GET method
+const server = https.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
+    res.end("Hello world\n");
+});
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+const axios = require("axios");
+
+axios
+    .get("http://example.com/todos")
+    .then((res) => {
+        console.log(`statusCode: ${res.status}`);
+        console.log(res);
+    })
+    .catch((error) => console.error(error));
+
+// // GET method
 // const options = {
-//     hostname: "127.0.0.1",
-//     port: 443,
 //     path: "/todos",
 //     method: "GET",
 // };
@@ -64,42 +84,32 @@ const https = require("https");
 
 // req.end();
 
-// POST method
-const data = JSON.stringify({
-    todo: "Buy the milk",
-});
+// // POST method
+// const data = JSON.stringify({
+//     todo: "Buy the milk",
+// });
 
-const options = {
-    hostname: "127.0.0.1",
-    port: 443,
-    path: "/todos",
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Content-Length": data.length,
-    },
-};
+// const options = {
+//     hostname: "127.0.0.1",
+//     port: 3000,
+//     path: "/todos",
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json",
+//         "Content-Length": data.length,
+//     },
+// };
 
-const req = https.request(options, (res) => {
-    console.log(`statusCode: ${res.statusCode}`);
+// const req = https.request(options, (res) => {
+//     console.log(`statusCode: ${res.statusCode}`);
 
-    res.on("data", (d) => {
-        process.stdout.write(d);
-    });
-});
+//     res.on("data", (d) => {
+//         process.stdout.write(d);
+//     });
+// });
 
-req.on("error", (error) => {
-    console.error(error);
-});
+// req.on("error", (error) => {
+//     console.error(error);
+// });
 
-req.end();
-
-// const axios = require("axios");
-
-// axios
-//     .get("http://example.com/todos")
-//     .then((res) => {
-//         console.log(`statusCode: ${res.status}`);
-//         console.log(res);
-//     })
-//     .catch((error) => console.error(error));
+// req.end();
