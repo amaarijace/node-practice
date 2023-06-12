@@ -11,9 +11,7 @@ app.use((req, res, next) => {
     root: path.join(__dirname),
   };
 
-  const fileName = "public/404.html";
-
-  res.status(404).sendFile(fileName, options);
+  const fileName = "public/404/index.html";
 });
 
 app.listen(port, () => {
