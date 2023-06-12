@@ -5,7 +5,7 @@ const port = 3000;
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  res.status(404);
+  res.status(404).send("Not found lmao");
 });
 
 app.listen(port, () => {
