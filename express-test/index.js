@@ -1,13 +1,19 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-  const fileName = "404.html";
+  const options = {
+    root: path.join(__dirname),
+  };
 
-  res.status(404).sendFile();
+  const fileName = "public/404.html";
+
+  res.status(404).sendFile(fileName, options);
 });
 
 app.listen(port, () => {
