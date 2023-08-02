@@ -16,6 +16,7 @@ const server = http.createServer((req, res) => {
   if (url === "/message" && method === "POST") {
     fs.writeFileSync("message.txt", "DUMMY");
     res.writeHead(302, { Location: "/" });
+    console.log(req.headers);
   }
   res.write("<html>");
   res.write("<head><title>My first page</title></head>");
