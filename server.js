@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
     });
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
-      console.log(parsedBody);
+      console.log("test parsed body: " + parsedBody);
     });
     fs.writeFileSync("message.txt", "DUMMY");
     res.writeHead(302, { Location: "/" });
