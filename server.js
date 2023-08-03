@@ -25,8 +25,9 @@ const server = http.createServer((req, res) => {
       const message = parsedBody.split("=")[1];
       console.log(message);
       fs.writeFileSync("message.txt", message);
+      res.writeHead(302, { Location: "/" });
+      return res.end();
     });
-    res.writeHead(302, { Location: "/" });
   }
   res.write("<html>");
   res.write("<head><title>My first page</title></head>");
