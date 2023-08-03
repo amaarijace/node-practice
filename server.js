@@ -24,9 +24,10 @@ const server = http.createServer((req, res) => {
       console.log(parsedBody);
       const message = parsedBody.split("=")[1];
       console.log(message);
-      fs.writeFileSync("message.txt", message);
-      res.writeHead(302, { Location: "/" });
-      return res.end();
+      fs.writeFileSync("message.txt", message, (err) => {
+        res.writeHead(302, { Location: "/" });
+        return res.end();
+      });
     });
   }
   res.write("<html>");
