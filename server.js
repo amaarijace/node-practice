@@ -1,7 +1,8 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
-app.use();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/add-product", (req, res, next) => {
   res.send(
