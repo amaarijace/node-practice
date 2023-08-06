@@ -5,7 +5,6 @@ const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(adminRoutes);
 app.use(shopRoutes);
 app.use((req, res, next) => {
