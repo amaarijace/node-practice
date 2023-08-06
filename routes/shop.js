@@ -1,5 +1,4 @@
 const express = require("express");
-
 const shopRouter = express.Router();
 
 shopRouter.use("/", (req, res, next) => {

@@ -1,5 +1,4 @@
 const express = require("express");
-
 const adminRouter = express.Router();
 
 adminRouter.get("/add-product", (req, res, next) => {
