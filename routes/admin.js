@@ -7,7 +7,7 @@ adminRouter.get("/add-product", (req, res, next) => {
   );
 });
 
-adminRouter.post("/product", (req, res, next) => {
+adminRouter.post("/add-product", (req, res, next) => {
   console.log(req.body);
   res.redirect("/");
 });
